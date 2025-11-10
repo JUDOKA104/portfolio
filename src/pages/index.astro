@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero";
+---
+<Base title="Enzo Oriol — Portfolio">
+  <Hero client:load />
+  <section class="grid md:grid-cols-3 gap-5">
+    <a class="asus-rog-card" href="/projects">Derniers projets</a>
+    <a class="asus-rog-card" href="/resume">CV & compétences</a>
+    <a class="asus-rog-card" href="/contact">Contact</a>
+  </section>
+</Base>
