@@ -11,11 +11,18 @@ const base = import.meta.env.BASE_URL;
 // Préfixer les href relatifs pour GitHub Pages
 const items = rawItems.map((it) => ({
   ...it,
-  href: it.href ? (it.href.startsWith("http") ? it.href : `${base}/${it.href}`) : undefined,
+  href: it.href
+    ? it.href.startsWith("http")
+      ? it.href
+      : `${base}/${it.href}`
+    : undefined,
 }));
 ---
 
-<Base title="Enzo Oriol — Portfolio" description="dev full-stack & cybersécurité.">
+<Base
+  title="Enzo Oriol — Portfolio"
+  description="dev full-stack & cybersécurité."
+>
   <Hero client:load />
 
   <div class="hr my-6"></div>
@@ -31,28 +38,43 @@ const items = rawItems.map((it) => ({
 
     <Reveal delay={0.02} client:load>
       <div class="asus-rog-card relative overflow-hidden">
-        <span class="absolute top-3 right-4 text-[10px] uppercase tracking-widest text-[var(--muted)]/70">Parcours</span>
+        <span
+          class="absolute top-3 right-4 text-[10px] uppercase tracking-widest text-[var(--muted)]/70"
+          >Parcours</span
+        >
         <h3 class="text-lg font-semibold flex items-center gap-2">
-          <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"></span>
+          <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"
+          ></span>
           Mon parcours en bref
         </h3>
         <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-          J’ai découvert l’informatique très tôt, et mes premières expériences m’ont appris à être <strong>autonome</strong>,
-          <strong>rigoureux</strong> et <strong>efficace</strong>. J’ai évolué dans des contextes variés : dev Python orienté API,
-          projets <strong>ERP Odoo 18</strong>, support client et migrations, mais aussi des postes de terrain
-          (fromagerie, mise en rayon) qui m’ont donné un vrai <strong>sens opérationnel</strong>.
+          J’ai découvert l’informatique très tôt, et mes premières expériences
+          m’ont appris à être <strong>autonome</strong>,
+          <strong>rigoureux</strong> et <strong>efficace</strong>. J’ai évolué
+          dans des contextes variés : dev Python orienté API, projets <strong
+            >ERP Odoo 18</strong
+          >, support client et migrations, mais aussi des postes de terrain
+          (fromagerie, mise en rayon) qui m’ont donné un vrai <strong
+            >sens opérationnel</strong
+          >.
         </p>
         <p class="text-[var(--muted)] text-sm leading-relaxed mt-3">
-          Ce mélange d’expériences m’a donné une vision complète : <strong>technique</strong>, <strong>humaine</strong>
-          et <strong>opérationnelle</strong>. Aujourd’hui, je construis un projet long terme autour du
-          <strong>développement</strong> et de la <strong>cybersécurité</strong>.
+          Ce mélange d’expériences m’a donné une vision complète : <strong
+            >technique</strong
+          >, <strong>humaine</strong>
+          et <strong>opérationnelle</strong>. Aujourd’hui, je construis un
+          projet long terme autour du
+          <strong>développement</strong> et de la <strong>cybersécurité</strong
+          >.
         </p>
 
         <!-- petites “pills” stack (max 8 pour lisibilité) -->
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="badge">Odoo 18</span><span class="badge">OWL 2</span><span class="badge">QWeb</span>
+          <span class="badge">Odoo 18</span><span class="badge">OWL 2</span
+          ><span class="badge">QWeb</span>
           <span class="badge">Python</span><span class="badge">PostgreSQL</span>
-          <span class="badge">React/TS</span><span class="badge">Linux</span><span class="badge">GitHub Actions</span>
+          <span class="badge">React/TS</span><span class="badge">Linux</span
+          ><span class="badge">GitHub Actions</span>
         </div>
       </div>
     </Reveal>
@@ -65,21 +87,36 @@ const items = rawItems.map((it) => ({
           <!-- Ce que je recherche -->
           <div>
             <h3 class="text-lg font-semibold flex items-center gap-2">
-              <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"></span>
+              <span
+                class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"
+              ></span>
               Ce que je recherche
             </h3>
             <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-              Un stage long (<strong>6 mois dès le 11 mai 2026</strong>, adaptable à 3 mois) suivi d’une
+              Un stage long (<strong>6 mois dès le 11 mai 2026</strong>,
+              adaptable à 3 mois) suivi d’une
               <strong>alternance de 3 ans</strong> dans un environnement mêlant
-              <strong>développement</strong>, <strong>cloud</strong>, <strong>sécurité</strong> ou <strong>ERP</strong>.
+              <strong>développement</strong>, <strong>cloud</strong>, <strong
+                >sécurité</strong
+              > ou <strong>ERP</strong>.
             </p>
             <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
               <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
                 Démarrage flexible (6 → 3 mois pour accélérer l’alternance)
               </li>
               <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
                 Projection multi-annuelle, montée en puissance réelle sur projets
               </li>
             </ul>
@@ -87,21 +124,38 @@ const items = rawItems.map((it) => ({
 
           <!-- Ce que j’apporte -->
           <div>
-            <h3 class="text-lg font-semibold flex items-center gap-2 mt-6 md:mt-0">
-              <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"></span>
+            <h3
+              class="text-lg font-semibold flex items-center gap-2 mt-6 md:mt-0"
+            >
+              <span
+                class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"
+              ></span>
               Ce que j’apporte
             </h3>
             <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-              Capacité d’adaptation, engagement, sens du travail bien fait. Solutions
-              <strong>robustes</strong>, <strong>claires</strong>, <strong>maintenables</strong> et <strong>documentées</strong>.
+              Capacité d’adaptation, engagement, sens du travail bien fait.
+              Solutions
+              <strong>robustes</strong>, <strong>claires</strong>, <strong
+                >maintenables</strong
+              > et <strong>documentées</strong>.
             </p>
             <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
               <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
                 Opérationnel rapidement, autonome, à l’aise en équipe
               </li>
               <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
                 Culture DX : code propre, docs, handover & CI/CD
               </li>
             </ul>
@@ -112,281 +166,453 @@ const items = rawItems.map((it) => ({
 
     <div class="h-px bg-zinc-800/70 my-6"></div>
 
-    <Reveal delay={0.10} client:load>
+    <Reveal delay={0.1} client:load>
       <div class="asus-rog-card">
-        <h3 class="text-lg font-semibold flex items-center gap-2">
-          <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"></span>
+        <h3 class="text-lg font-semibold flex items-center gap-2 text-balance">
+          <span class="inline-block w-1.5 h-5 rounded-full bg-[var(--accent)]"
+          ></span>
           Ma façon de travailler
         </h3>
-        <blockquote class="mt-3 border-l-2 pl-4 text-sm text-[var(--muted)] border-[var(--accent)]/40">
-          <em>Comprendre avant d’agir, documenter pour transmettre, livrer avec exigence.</em>
+
+        <blockquote
+          class="mt-3 border-l-2 pl-4 text-sm text-[var(--muted)] border-[var(--accent)]/40 text-pretty leading-relaxed"
+        >
+          <em
+            >Comprendre avant d’agir, documenter pour transmettre, livrer avec
+            exigence.</em
+          >
         </blockquote>
-        <div class="mt-3 grid md:grid-cols-2 gap-4 text-sm text-[var(--muted)]">
-          <ul class="space-y-1.5">
+
+        <div
+          class="mt-3 grid md:grid-cols-2 gap-4 text-sm text-[var(--muted)] leading-relaxed"
+        >
+          <ul class="space-y-1.5 text-pretty">
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Solutions <strong>propres</strong>, <strong>réutilisables</strong>, testées
+              <svg
+                class="w-4 h-4 mt-0.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+              >
+              Solutions propres, réutilisables, testées
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Itération rapide : je creuse, je teste, j’affine
+              </li>
             </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Itération rapide : je creuse, je teste, j’affine
-            </li>
-          </ul>
-          <ul class="space-y-1.5">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Calme sous pression, rythme constant, communication claire
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Handover pro : doc, exemples, transfert de compétences
-            </li>
+
+            <ul class="space-y-1.5 text-pretty">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Calme sous pression, rythme constant, communication claire
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Handover pro : doc, exemples, transfert de compétences
+              </li>
+            </ul>
           </ul>
         </div>
       </div>
     </Reveal>
-  </section>
 
-  <div class="hr my-6"></div>
+    <div class="hr my-6"></div>
 
-  <!-- Mes projets phares -->
-  <section id="featured" class="asus-rog-card mt-6 slice">
-    <h2 class="text-3xl font-bold mb-2 text-center">Mes projets phares</h2>
-    <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
-      Contexte, impact, code. Le reste est sur la page Projets.
-    </p>
+    <!-- Mes projets phares -->
+    <section id="featured" class="asus-rog-card mt-6 slice">
+      <h2 class="text-3xl font-bold mb-2 text-center">Mes projets phares</h2>
+      <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
+        Contexte, impact, code. Le reste est sur la page Projets.
+      </p>
 
-    <!-- Odoo -->
-    <Reveal delay={0.02} client:load>
-      <article class="asus-rog-card mt-5 grid md:grid-cols-[48%_auto] gap-4 items-stretch">
-        <a class="block rounded-xl overflow-hidden border border-[var(--border)]" href={`${base}/projects`} rel="noreferrer">
-          <img
-            src={`${base}/kanban.png`}
-            alt="Suite Portails Odoo 18 — Aperçu"
-            class="w-full h-full object-cover object-[center_30%]"
-            loading="lazy"
-          />
-        </a>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="badge">Odoo 18</span><span class="badge">OWL 2</span><span class="badge">QWeb</span>
-            <span class="badge">Python</span><span class="badge">PostgreSQL</span><span class="badge">Portail</span>
-          </div>
-          <h3 class="text-xl font-semibold">Suite de Portails Odoo 18</h3>
-          <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-            Conception d’une <strong>suite de portails Odoo 18</strong> : Helpdesk (création en <em>modal</em>),
-            <strong>Factures</strong> (PDF QWeb brandés) et formulaires <strong>self-service</strong>. Composants OWL 2 réutilisables,
-            logique <strong>multi-entreprise</strong>, DX propre.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Helpdesk Portal : modale OWL 2, validations serveur, feedback clair, maj en direct
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Factures/Docs : PDF QWeb brandés, logos/couleurs dynamiques, tableaux soignés
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
-              Sécurité & DX : ACL fines, routes portail dédiées, PortalChatter adapté 18, CI/CD & handover
-            </li>
-          </ul>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
-          </div>
-        </div>
-      </article>
-    </Reveal>
-
-    <!-- Ember-Slash -->
-    <Reveal delay={0.08} client:load>
-      <article class="asus-rog-card mt-5 grid md:grid-cols-[48%_auto] gap-4 items-stretch">
-        <a class="block rounded-xl overflow-hidden border border-[var(--border)]"
-           href="https://github.com/JUDOKA104/Ember-Slash" target="_blank" rel="noreferrer">
-          <img
-            src={`${base}/Ember_slash.png`}
-            alt="Ember-Slash (Unity) — Aperçu"
-            class="w-full h-full object-cover object-center"
-            loading="lazy"
-          />
-        </a>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="badge">Unity</span><span class="badge">C#</span>
-            <span class="badge">Gameplay</span><span class="badge">Level Design</span>
-          </div>
-          <h3 class="text-xl font-semibold">Ember-Slash · Prototype action/arcade</h3>
-          <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-            Prototype nerveux orienté “feel” : boucle de combat, feedbacks visuels/sonores, UI lisible.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Dash/combos, hitstop, VFX légers</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Architecture C# modulaire</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>UI/UX simple, performante</li>
-          </ul>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <a class="btn" href="https://github.com/JUDOKA104/Ember-Slash" target="_blank" rel="noreferrer">Voir le projet</a>
-            <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
-          </div>
-        </div>
-      </article>
-    </Reveal>
-
-    <!-- nb_premier_V3 -->
-    <Reveal delay={0.16} client:load>
-      <article class="asus-rog-card mt-5 grid md:grid-cols-[48%_auto] gap-4 items-stretch">
-        <a class="block rounded-xl overflow-hidden border border-[var(--border)]"
-           href="https://github.com/JUDOKA104/nb_premier_V3" target="_blank" rel="noreferrer">
-          <img
-            src={`${base}/generateur.png`}
-            alt="nb_premier_V3 (Python) — Aperçu"
-            class="w-full h-full object-cover object-center"
-            loading="lazy"
-          />
-        </a>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="badge">Python</span><span class="badge">Algo</span>
-            <span class="badge">Perf</span><span class="badge">CLI/GUI</span>
-          </div>
-          <h3 class="text-xl font-semibold">Générateur de nombres premiers · v3</h3>
-          <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
-            Génération/test de nombres premiers : optimisations mémoire/CPU, logique mathématique, interfaces CLI/GUI.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Heuristiques & filtrages rapides</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>I/O efficaces</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Base prête pour du C++</li>
-          </ul>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <a class="btn" href="https://github.com/JUDOKA104/nb_premier_V3" target="_blank" rel="noreferrer">Voir le projet</a>
-            <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
-          </div>
-        </div>
-      </article>
-    </Reveal>
-  </section>
-
-  <div class="hr my-6"></div>
-
-  <!-- Compétences clés -->
-  <section id="skills" class="asus-rog-card mt-10 slice">
-    <h2 class="text-3xl font-bold mb-2 text-center">Compétences clés</h2>
-    <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
-      Un aperçu structuré de mes domaines d’expertise.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-5 mt-6">
+      <!-- Odoo -->
       <Reveal delay={0.02} client:load>
-        <div class="asus-rog-card">
-          <h3 class="text-lg font-semibold">Développement & ERP</h3>
-          <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
-            <li>✅ OWL 2 : composants modulaires, formulaires, modales</li>
-            <li>✅ QWeb : PDF avancés, branding dynamique, tables complexes</li>
-            <li>✅ Python : modèles, ACL, routes portail, multi-entreprise</li>
-          </ul>
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="badge">Odoo 18</span><span class="badge">OWL 2</span>
-            <span class="badge">QWeb</span><span class="badge">Python</span><span class="badge">PostgreSQL</span>
+        <article
+          class="asus-rog-card mt-5 grid md:grid-cols-[minmax(0,48%)_1fr] gap-4 items-start"
+        >
+          <a
+            class="block rounded-xl overflow-hidden border border-[var(--border)]"
+            href={`${base}/projects`}
+            rel="noreferrer"
+          >
+            <!-- aspect wrapper prevents height jumps -->
+            <div
+              class="relative aspect-[16/10] md:aspect-[5/4] bg-[var(--card)]"
+            >
+              <img
+                src={`${base}/kanban.png`}
+                alt="Suite Portails Odoo 18 — Aperçu"
+                class="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+                loading="lazy"
+              />
+            </div>
+          </a>
+
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge">OWL</span>
+              <span class="badge">QWeb</span><span class="badge">Python</span>
+              <span class="badge">BDD SQL</span>
+            </div>
+            <h3 class="text-xl font-semibold">Suite de Portails Odoo 18</h3>
+            <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
+              Conception d’une <strong>suite de portails Odoo 18</strong> : Helpdesk
+              (création en <em>modal</em>),
+              <strong>Factures</strong> (PDF QWeb brandés) et formulaires <strong
+                >self-service</strong
+              >. Composants OWL 2 réutilisables, logique <strong
+                >multi-entreprise</strong
+              >, DX propre.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Helpdesk Portal : modale OWL 2, validations serveur, feedback clair,
+                maj en direct
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Factures/Docs : PDF QWeb brandés, logos/couleurs dynamiques, tableaux
+                soignés
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >
+                Sécurité & DX : ACL fines, routes portail dédiées, PortalChatter
+                adapté 18, CI/CD & handover
+              </li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
+            </div>
           </div>
-        </div>
+        </article>
       </Reveal>
 
-      <Reveal delay={0.06} client:load>
-        <div class="asus-rog-card">
-          <h3 class="text-lg font-semibold">Linux & Infrastructure</h3>
-          <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
-            <li>✅ Debian, Rocky, Alpine : durcissement, services, supervision</li>
-            <li>✅ PKI : CA interne, certificats, chaîne de confiance</li>
-            <li>✅ Reverse proxy, pare-feu, segmentation réseau</li>
-          </ul>
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="badge">Linux</span><span class="badge">Debian</span>
-            <span class="badge">Rocky</span><span class="badge">PKI</span><span class="badge">NGINX</span>
+      <!-- Ember-Slash -->
+      <Reveal delay={0.08} client:load>
+        <article
+          class="asus-rog-card mt-5 grid md:grid-cols-[48%_auto] gap-4 items-stretch"
+        >
+          <a
+            class="block rounded-xl overflow-hidden border border-[var(--border)]"
+            href="https://github.com/JUDOKA104/Ember-Slash"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={`${base}/Ember_slash.png`}
+              alt="Ember-Slash (Unity) — Aperçu"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </a>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge">Unity</span><span class="badge">C#</span>
+              <span class="badge">Gameplay</span><span class="badge"
+                >Level Design</span
+              >
+            </div>
+            <h3 class="text-xl font-semibold">
+              Ember-Slash · Prototype action/arcade
+            </h3>
+            <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
+              Prototype nerveux orienté “feel” : boucle de combat, feedbacks
+              visuels/sonores, UI lisible.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >Dash/combos, hitstop, VFX légers
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >Architecture C# modulaire
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >UI/UX simple, performante
+              </li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a
+                class="btn"
+                href="https://github.com/JUDOKA104/Ember-Slash"
+                target="_blank"
+                rel="noreferrer">Voir le projet</a
+              >
+              <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
+            </div>
           </div>
-        </div>
+        </article>
       </Reveal>
 
-      <Reveal delay={0.10} client:load>
-        <div class="asus-rog-card">
-          <h3 class="text-lg font-semibold">Cybersécurité</h3>
-          <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
-            <li>✅ Durcissement SSH, fail2ban, auditd, bonnes pratiques</li>
-            <li>✅ Monitoring : Zabbix, journaux système, analyse d’événements</li>
-            <li>✅ Sécurité réseau : VLAN, routage, pare-feu</li>
-          </ul>
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="badge">Fail2Ban</span><span class="badge">Firewall</span>
-            <span class="badge">Audit</span><span class="badge">Zabbix</span>
+      <!-- nb_premier_V3 -->
+      <Reveal delay={0.16} client:load>
+        <article
+          class="asus-rog-card mt-5 grid md:grid-cols-[48%_auto] gap-4 items-stretch"
+        >
+          <a
+            class="block rounded-xl overflow-hidden border border-[var(--border)]"
+            href="https://github.com/JUDOKA104/nb_premier_V3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={`${base}/generateur.png`}
+              alt="nb_premier_V3 (Python) — Aperçu"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </a>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge">Python</span><span class="badge">Algo</span>
+              <span class="badge">Perf</span><span class="badge">CLI/GUI</span>
+            </div>
+            <h3 class="text-xl font-semibold">
+              Générateur de nombres premiers · v3
+            </h3>
+            <p class="text-[var(--muted)] text-sm mt-2 leading-relaxed">
+              Génération/test de nombres premiers : optimisations mémoire/CPU,
+              logique mathématique, interfaces CLI/GUI.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >Heuristiques & filtrages rapides
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >I/O efficaces
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"><path d="M20 6 9 17l-5-5"></path></svg
+                >Base prête pour du C++
+              </li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a
+                class="btn"
+                href="https://github.com/JUDOKA104/nb_premier_V3"
+                target="_blank"
+                rel="noreferrer">Voir le projet</a
+              >
+              <a class="btn" href={`${base}/projects`}>Voir d'autres projets</a>
+            </div>
           </div>
-        </div>
+        </article>
       </Reveal>
+    </section>
 
-      <Reveal delay={0.14} client:load>
-        <div class="asus-rog-card">
-          <h3 class="text-lg font-semibold">Automatisation & Virtualisation</h3>
-          <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
-            <li>✅ GitHub Actions : build, deploy, lint</li>
-            <li>✅ Hyper-V, Proxmox : snapshots, lab réseau, Virtualisation, communication inter-réseaux</li>
-            <li>✅ Scripts Python & Bash</li>
-          </ul>
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="badge">GitHub Actions</span><span class="badge">Hyper-V</span>
-            <span class="badge">Proxmox</span><span class="badge">Bash</span><span class="badge">Python</span>
+    <div class="hr my-6"></div>
+
+    <!-- Compétences clés -->
+    <section id="skills" class="asus-rog-card mt-10 slice">
+      <h2 class="text-3xl font-bold mb-2 text-center">Compétences clés</h2>
+      <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
+        Un aperçu structuré de mes domaines d’expertise.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-5 mt-6">
+        <Reveal delay={0.02} client:load>
+          <div class="asus-rog-card">
+            <h3 class="text-lg font-semibold">Développement & ERP</h3>
+            <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
+              <li>✅ OWL 2 : composants modulaires, formulaires, modales</li>
+              <li>
+                ✅ QWeb : PDF avancés, branding dynamique, tables complexes
+              </li>
+              <li>
+                ✅ Python : modèles, ACL, routes portail, multi-entreprise
+              </li>
+            </ul>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Odoo 18</span><span class="badge">OWL 2</span>
+              <span class="badge">QWeb</span><span class="badge">Python</span
+              ><span class="badge">PostgreSQL</span>
+            </div>
           </div>
-        </div>
-      </Reveal>
-    </div>
-  </section>
+        </Reveal>
 
-  <div class="hr my-6"></div>
+        <Reveal delay={0.06} client:load>
+          <div class="asus-rog-card">
+            <h3 class="text-lg font-semibold">Linux & Infrastructure</h3>
+            <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
+              <li>
+                ✅ Debian, Rocky, Alpine : durcissement, services, supervision
+              </li>
+              <li>✅ PKI : CA interne, certificats, chaîne de confiance</li>
+              <li>✅ Reverse proxy, pare-feu, segmentation réseau</li>
+            </ul>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Linux</span><span class="badge">Debian</span>
+              <span class="badge">Rocky</span><span class="badge">PKI</span
+              ><span class="badge">NGINX</span>
+            </div>
+          </div>
+        </Reveal>
 
-  <!-- Timeline -->
-  <section id="timeline" class="asus-rog-card slice">
-    <h2 class="text-3xl font-bold mb-2 text-center">Mon parcours</h2>
-    <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
-      Étapes clés · ce que j’ai construit · vers où je vais.
-    </p>
+        <Reveal delay={0.1} client:load>
+          <div class="asus-rog-card">
+            <h3 class="text-lg font-semibold">Cybersécurité</h3>
+            <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
+              <li>✅ Durcissement SSH, fail2ban, auditd, bonnes pratiques</li>
+              <li>
+                ✅ Monitoring : Zabbix, journaux système, analyse d’événements
+              </li>
+              <li>✅ Sécurité réseau : VLAN, routage, pare-feu</li>
+            </ul>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Fail2Ban</span><span class="badge"
+                >Firewall</span
+              >
+              <span class="badge">Audit</span><span class="badge">Zabbix</span>
+            </div>
+          </div>
+        </Reveal>
 
-    <Reveal client:load>
-      <div class="mt-5">
-        <RichTimeline items={items} client:load />
+        <Reveal delay={0.14} client:load>
+          <div class="asus-rog-card">
+            <h3 class="text-lg font-semibold">
+              Automatisation & Virtualisation
+            </h3>
+            <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
+              <li>✅ GitHub Actions : build, deploy, lint</li>
+              <li>
+                ✅ Hyper-V, Proxmox : snapshots, lab réseau, Virtualisation,
+                communication inter-réseaux
+              </li>
+              <li>✅ Scripts Python & Bash</li>
+            </ul>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">GitHub Actions</span><span class="badge"
+                >Hyper-V</span
+              >
+              <span class="badge">Proxmox</span><span class="badge">Bash</span
+              ><span class="badge">Python</span>
+            </div>
+          </div>
+        </Reveal>
       </div>
-    </Reveal>
+    </section>
 
-    <div class="mt-6 flex flex-wrap justify-center gap-3">
-      <a class="btn" href={`${base}/resume`}>Parcourir mon CV</a>
-      <a class="btn" href={`${base}/cv.pdf`} download>Télécharger le CV (PDF)</a>
-    </div>
-  </section>
+    <div class="hr my-6"></div>
 
-  <div class="hr my-6"></div>
+    <!-- Timeline -->
+    <section id="timeline" class="asus-rog-card slice">
+      <h2 class="text-3xl font-bold mb-2 text-center">Mon parcours</h2>
+      <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
+        Étapes clés · ce que j’ai construit · vers où je vais.
+      </p>
 
-  <!-- Contact rapide -->
-  <section id="contact-quick" class="asus-rog-card slice">
-    <h2 class="text-3xl font-bold mb-2 text-center">Contact rapide</h2>
-    <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
-      Une opportunité ? J’envoie volontiers CV, LM et recommandations.
-    </p>
+      <Reveal client:load>
+        <div class="mt-5">
+          <RichTimeline items={items} client:load />
+        </div>
+      </Reveal>
 
-    <div class="mt-5 grid md:grid-cols-3 gap-4">
-      <a class="asus-rog-card no-underline text-center" href="mailto:oriol.enzo10@gmail.com">
-        <div class="text-sm text-[var(--muted)]">Email</div>
-        <div class="text-lg font-semibold mt-1">oriol.enzo10@gmail.com</div>
-      </a>
-      <a class="asus-rog-card no-underline text-center" href="https://github.com/judoka104" target="_blank" rel="noreferrer">
-        <div class="text-sm text-[var(--muted)]">GitHub</div>
-        <div class="text-lg font-semibold mt-1">@judoka104</div>
-      </a>
-      <a class="asus-rog-card no-underline text-center" href={`${base}/cv.pdf`} download>
-        <div class="text-sm text-[var(--muted)]">CV (PDF)</div>
-        <div class="text-lg font-semibold mt-1">Télécharger</div>
-      </a>
-    </div>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a class="btn" href={`${base}/resume`}>Parcourir mon CV</a>
+        <a class="btn" href={`${base}/cv.pdf`} download
+          >Télécharger le CV (PDF)</a
+        >
+      </div>
+    </section>
 
-    <div class="mt-5 flex flex-wrap justify-center gap-3">
-      <a class="btn" href={`${base}/contact`}>Formulaire de contact</a>
-    </div>
+    <div class="hr my-6"></div>
+
+    <!-- Contact rapide -->
+    <section id="contact-quick" class="asus-rog-card slice">
+      <h2 class="text-3xl font-bold mb-2 text-center">Contact rapide</h2>
+      <p class="text-[var(--muted)] text-sm text-center max-w-2xl mx-auto">
+        Une opportunité ? J’envoie volontiers CV, LM et recommandations.
+      </p>
+
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <a
+          class="asus-rog-card no-underline text-center"
+          href="mailto:oriol.enzo10@gmail.com"
+        >
+          <div class="text-sm text-[var(--muted)]">Email</div>
+          <div class="text-lg font-semibold mt-1">oriol.enzo10@gmail.com</div>
+        </a>
+        <a
+          class="asus-rog-card no-underline text-center"
+          href="https://github.com/judoka104"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div class="text-sm text-[var(--muted)]">GitHub</div>
+          <div class="text-lg font-semibold mt-1">@judoka104</div>
+        </a>
+        <a
+          class="asus-rog-card no-underline text-center"
+          href={`${base}/cv.pdf`}
+          download
+        >
+          <div class="text-sm text-[var(--muted)]">CV (PDF)</div>
+          <div class="text-lg font-semibold mt-1">Télécharger</div>
+        </a>
+      </div>
+
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <a class="btn" href={`${base}/contact`}>Formulaire de contact</a>
+      </div>
+    </section>
   </section>
 </Base>
