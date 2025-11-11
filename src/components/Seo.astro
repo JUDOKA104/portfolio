@@ -1,0 +1,21 @@
+---
+const {
+  title = "Enzo Oriol — Portfolio",
+  description = "Portfolio d'Enzo Oriol : Odoo 18, Full‑stack, Cyber.",
+  image = "og-default.png",
+  url = new URL(Astro.url.pathname, Astro.site).toString()
+} = Astro.props;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site).toString()} />
+<meta property="og:url" content={url} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
+

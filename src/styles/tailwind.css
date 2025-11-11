@@ -2,17 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Thème */
 :root {
   --bg: #0b0c0e;
+  /* fond général */
   --fg: #e6e8ea;
+  /* texte */
   --muted: #9aa3ad;
-  --accent: #005A1E;
+  /* texte secondaire */
+  --accent: #14b86e;
+  /* vert + punchy (remplace #005A1E) */
+  --card: #0f1115;
+  /* fond cartes */
+  --border: #21242c;
+  /* bordures */
 }
-html, body {
+
+/* Base */
+html,
+body {
   background: var(--bg);
-  color: var(--fg);
+  color: var(--fg)
 }
+
+* {
+  outline: 0
+}
+
+:focus-visible {
+  @apply ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-transparent rounded-md
+}
+
+/* Texture bruit très légère */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .06;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB...");
+  /* micro-noise 1x1 base64 (très léger) */
+  background-size: 8px 8px;
+}
+
+/* Cartes */
 .asus-rog-card {
-  @apply rounded-2xl p-6 shadow-xl bg-zinc-900/60 border border-zinc-800;
+  @apply rounded-2xl p-6 shadow-xl border backdrop-blur;
+  background: linear-gradient(180deg, rgba(31, 34, 41, .65), rgba(20, 23, 29, .6));
+  border-color: var(--border);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
 }
-a { @apply underline decoration-transparent hover:decoration-current transition; }
+
+.asus-rog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
+  border-color: color-mix(in oklch, var(--accent) 45%, #1f2329);
+}
+
+/* Liens */
+a {
+  @apply underline decoration-transparent hover:decoration-current transition
+}
+
+/* Titres */
+.h-title {
+  @apply text-4xl md:text-5xl font-extrabold tracking-tight;
+}
+
+.h-sub {
+  @apply text-lg text-[var(--muted)];
+}
+
+/* Séparateur fin */
+.hr {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2b2f38, transparent);
+}
+
+/* Badge stack */
+.badge {
+  @apply text-xs px-2 py-1 rounded-full border;
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+/* Boutons fantômes */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl border;
+  border-color: var(--border);
+}
+
+.btn:hover {
+  border-color: color-mix(in oklch, var(--accent) 50%, var(--border));
+}
+
+/* Scrollbar top (progress) */
+#scrollbar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #7cfcc6);
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.badge {
+  @apply text-[11px] px-2.5 py-1 rounded-full border;
+  border-color: var(--border);
+  color: var(--muted);
+  background: linear-gradient(180deg, rgba(40, 44, 52, .55), rgba(25, 28, 34, .55));
+  transition: transform .15s ease, border-color .2s ease, background .2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in oklch, var(--accent) 45%, var(--border));
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+#projectsGrid {
+  align-items: stretch;
+}
+
+#projectsGrid .project-wrap {
+  height: 100%;
+}
+
+#projectsGrid .project-wrap>* {
+  height: 100%;
+}
+
+#projectsGrid .project-wrap>* a,
+#projectsGrid .project-wrap>* button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
+/* Hauteur mini pour l'équilibre visuel */
+@media (min-width: 768px) {
+  #projectsGrid .project-wrap>* {
+    min-height: 300px;
+  }
+}

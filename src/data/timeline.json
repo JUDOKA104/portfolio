@@ -1,0 +1,116 @@
+[
+    {
+        "date": "2026 → 2029",
+        "title": "Alternance 3 ans — Full-stack → Cybersécurité & Cloud",
+        "bullets": [
+            "Parcours progressif : 1 an full-stack, 2 ans cyber/cloud",
+            "Contribuer à des projets à impact (prod-ready, maintenables)",
+            "Certifications et veille continue (DevSecOps / réseau)"
+        ],
+        "badges": [
+            "Full-stack",
+            "DevSecOps",
+            "Cloud"
+        ],
+        "linkLabel": "Me contacter",
+        "href": "contact"
+    },
+    {
+        "date": "Objectif Mai 2026",
+        "title": "Stage long (6 mois) — Dév / Cloud / Cyber",
+        "place": "Lyon / Sud (Agde) — mobilité",
+        "bullets": [
+            "Démarrage souhaité le 11 mai 2026 (adaptable 3 mois si besoin)",
+            "Objectif : immersion concrète + montée en puissance rapide",
+            "Projection directe vers une alternance 3 ans"
+        ],
+        "badges": [
+            "Dev",
+            "Cloud",
+            "Sécurité"
+        ],
+        "linkLabel": "Me contacter",
+        "href": "contact"
+    },
+    {
+        "date": "2025",
+        "title": "Développeur Odoo 18 — Portails & intégrations avancées",
+        "place": "EASI-SOFT (stage 4 mois)",
+        "bullets": [
+            "Suite Portails Odoo 18 : Helpdesk + Factures + Docs self-service (modale OWL 2, ACL, vues front)",
+            "PDF QWeb sur-mesure : branding dynamique, multi-entreprise",
+            "Qualité & DX : structure claire, docs, handover, CI/CD de base"
+        ],
+        "badges": [
+            "Odoo 18",
+            "OWL 2",
+            "QWeb",
+            "Python",
+            "PostgreSQL"
+        ],
+        "linkLabel": "Voir les projets",
+        "href": "projects"
+    },
+    {
+        "date": "2023 → 2024",
+        "title": "Stages dev — Python orienté API",
+        "bullets": [
+            "Dév endpoints et intégrations, gestion d’I/O, monitoring léger",
+            "Tests & documentation, packaging de scripts",
+            "Initiation CI basique (lint, checks)"
+        ],
+        "badges": [
+            "Python",
+            "API",
+            "Tests"
+        ]
+    },
+    {
+        "date": "2024 → 2026",
+        "title": "IPSSI — Prépa Bachelor (Lyon)",
+        "bullets": [
+            "Dev full-stack, Linux/Infra, réseaux, cybersécurité",
+            "Projets : Portails Odoo, hardening Linux (PKI, reverse-proxy, 2FA SSH)",
+            "Culture produit & documentation"
+        ],
+        "badges": [
+            "Linux",
+            "PKI",
+            "Reverse-proxy",
+            "2FA-SSH"
+        ]
+    },
+    {
+        "date": "Expériences terrain",
+        "title": "Opérationnel & sens du service",
+        "bullets": [
+            "Mise en rayon (Intermarché), fromagerie (affinage)",
+            "Rigueur, cadence, travail en équipe, service client",
+            "Financement partiel des études, autonomie"
+        ],
+        "badges": [
+            "Rigueur",
+            "Équipe",
+            "Service"
+        ]
+    },
+    {
+        "date": "2021 → 2024",
+        "title": "Lycée Notre Dame du Château — Bac (Monistrol-sur-Loire)",
+        "bullets": [
+            "Mention Assez Bien"
+        ],
+        "badges": [
+            "Mathématiques",
+            "NSI",
+            "Maths expertes"
+        ]
+    },
+    {
+        "date": "2017 → 2021",
+        "title": "Collège Notre Dame du Château — Brevet",
+        "bullets": [
+            "Mention Très Bien"
+        ]
+    }
+]

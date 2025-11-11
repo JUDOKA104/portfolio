@@ -1,14 +1,301 @@
 ---
 import Base from "../layouts/Base.astro";
+import Timeline from "../components/Timeline";
+
+const base = import.meta.env.BASE_URL ?? "/";
+
+// 🧱 Données structurées (faciles à maintenir)
+const contacts = [
+  { label: "Email", href: "mailto:oriol.enzo10@gmail.com", value: "oriol.enzo10@gmail.com" },
+  { label: "Téléphone", href: "tel:+33645685002", value: "+33 6 45 68 50 02" },
+  { label: "Localisation", href: undefined, value: "Lyon & alentours" },
+];
+
+const coreSkills = [
+  { cat: "Apps métier & ERP", items: ["Architecture modulaire", "Modèles Python", "ORM PostgreSQL", "ACL & sécurité", "Vues dynamiques", "PDF/QWeb avancés", "Portails & API internes"] },
+  { cat: "Front", items: ["React", "TypeScript", "Tailwind", "Astro", "OWL Components"] },
+  { cat: "DevOps", items: ["Linux (Debian/Rocky/Alpine)", "Nginx", "Gunicorn", "Docker", "CI/CD", "SSL/TLS"] },
+  { cat: "Cyber", items: ["Hardening", "PKI interne", "Fail2ban", "Suricata", "SSH clés + OTP"] },
+];
+
+const tools = [
+  { name: "VS Code", level: 4.5 },
+  { name: "Windows", level: 4.5 },  
+  { name: "Odoo", level: 4.8 },
+  { name: "Unity/UE5", level: 3.5 },
+  { name: "Kali Linux", level: 3.5 },
+  { name: "VirtualBox", level: 4.5 },
+  { name: "Windows Server 2022", level: 4.0 },
+];
+
+const langs = [
+  { name: "Anglais", level: "B1" },
+  { name: "Espagnol", level: "A2" },
+];
+
+const softSkills = ["Attentif", "Méthodique", "Réfléchi", "Fiable", "Organisé"];
+
+const interests = [
+  { name: "Judo/Jujitsu", detail: "16 ans – Ceinture Noire" },
+  { name: "Natation", detail: "10 ans" },
+  { name: "Batterie", detail: "8 ans – 2× 5ème France" },
+  { name: "Jeux vidéo", detail: "Gameplay & optimisation" },
+];
+
+const timeline = [
+  {
+    title: "EASI‑SOFT — Développeur Odoo 18",
+    time: "Mai → Sept. 2025 (stage 4 mois)",
+    desc: "Modules RH, portail helpdesk, QWeb PDF, OWL 2 (migration & widgets), multi‑company.",
+    bullets: [
+      "Création du module ‘Fiche de poste’ (vues avancées, tags, avatar widgets, rapports QWeb)",
+      "Portail Helpdesk custom (iframe Kanban, ACL, couleurs dynamiques PSAI/EASI‑SOFT)",
+      "Templates PDF entreprise (watermarks dynamiques, logos color‑coded, wkhtmltopdf fixes)",
+      "Widgets OWL 2 & JS (modal de création, UI/UX, validations)",
+    ],
+    stack: ["Odoo 18", "OWL 2", "Python", "PostgreSQL", "QWeb", "XML", "Tailwind", "wkhtmltopdf"],
+  },
+  {
+    title: "IPSSI — Prépa Bachelor",
+    time: "2024 — 2026",
+    desc: "Réseau, Linux, cybersécurité & dev full‑stack.",
+    bullets: [
+      "TP Hardening Linux (LUKS, 2FA, sudoers, mod_security, fail2ban, Suricata)",
+      "PKI interne : CA, certificats serveurs, chaîne TLS & validation",
+      "Projets web (Astro, React/TS), CI/CD, Nginx, Docker",
+    ],
+    stack: ["Debian/Rocky/Alpine", "Nginx", "Docker", "OpenSSL", "Ansible (bases)", "Astro", "React", "TypeScript"],
+  },
+  {
+    title: "EDSI — Dév. Jeux & Intégrations API",
+    time: "Avril 2022 & Février 2023 (stages)",
+    desc: "Programmation gameplay & intégrations API (outillage).",
+    bullets: ["Scripts gameplay", "APIs", "Automatisation simple"],
+    stack: ["C#", "Unity", "REST"],
+  },
+  {
+    title: "Compagnie Fromagère de la Vallée de l'Ance — Affineur",
+    time: "Juillet → Sept. 2024",
+    desc: "Rigueur, travail d’équipe, adaptation (horaires matin/soir).",
+    bullets: [],
+    stack: ["Organisation", "Qualité"]
+  },
+  {
+    title: "Intermarché — Assistant Rayon & Appro",
+    time: "Déc. 2023 → Janv. 2024",
+    desc: "Organisation & travail sous pression (période fêtes).",
+    bullets: [],
+    stack: ["Logistique", "Relation client"],
+  },
+];
+
+const education = [
+  {
+    school: "IPSSI — Grande École d’Informatique",
+    period: "2024 — 2026",
+    degree: "Prépa Bachelor – Développement & Réseaux",
+    details: ["B1/B2 : Informatique, Cybersécurité, Développement", "B1 : Dev & sécurité réseaux", "B2 : Cybersécurité, dev avancé"],
+  },
+  {
+    school: "ND du Château (Collège/Lycée)",
+    period: "2017 — 2024",
+    degree: "Bac général (Maths + NSI) – Mention AB | Brevet – Mention TB",
+    details: [],
+  },
+];
+
+const quickWins = [
+  { title: "Hardening Linux Lvl 1", text: "Partitionnement, LUKS, 2FA PAM, sudoers strict, journald, SSH clés+OTP." },
+  { title: "PKI Interne", text: "CA, certificats serveurs, Nginx TLS 1.2+, ciphers durcis, OCSP stapling (si dispo)." },
+  { title: "Odoo 18 Portal", text: "Portail Helpdesk custom: modal ‘Create New’, iframe Kanban, ACL, couleurs dynamiques." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Enzo Oriol",
+  jobTitle: "Développeur Odoo 18 / Full‑stack junior",
+  address: { "@type": "PostalAddress", addressLocality: "Lyon" },
+  email: "mailto:oriol.enzo10@gmail.com",
+  telephone: "+33 6 45 68 50 02",
+  sameAs: [],
+};
 ---
-<Base title="CV — Enzo Oriol">
-  <section class="asus-rog-card">
-    <h2 class="text-3xl font-bold">CV & Compétences</h2>
-    <ul class="mt-3 list-disc pl-6 space-y-1">
-      <li>Odoo 18 (OWL 2, QWeb, Python, PostgreSQL)</li>
-      <li>Front: React/TypeScript, Tailwind</li>
-      <li>DevOps: Linux (Debian/Rocky/Alpine), Nginx, SSL/TLS, CI/CD</li>
-      <li>Cyber: durcissement, PKI, suricata/fail2ban</li>
+
+<Base title="CV — Enzo Oriol" description="Compétences, expériences et formation.">
+  <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+
+  <!-- HERO / IDENTITÉ -->
+  <header class="asus-rog-card p-6 mb-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Enzo Oriol</h1>
+    <p class="mt-2 text-lg text-[var(--muted)]">Développeur Odoo 18 • Full‑stack junior • Réseau & Cyber</p>
+
+    <address class="mt-4 not-italic flex flex-wrap gap-2">
+      {contacts.map((c) => (
+        c.href ? (
+          <a
+            href={c.href}
+            class="px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition underline-offset-4 hover:underline"
+            aria-label={`${c.label}: ${c.value}`}
+          >{c.value}</a>
+        ) : (
+          <span
+            class="px-3 py-1 rounded-full border border-white/10 bg-white/5"
+            aria-label={`${c.label}: ${c.value}`}
+           
+          >{c.value}</span>
+        )
+      ))}
+    </address>
+  </header>
+
+  <!-- COMPÉTENCES -->
+  <section class="asus-rog-card p-6 mb-6">
+    <h2 class="text-3xl font-bold">Compétences clés</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      {coreSkills.map(({ cat, items }) => (
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <h3 class="font-semibold text-xl">{cat}</h3>
+          <div class="mt-2 flex flex-wrap gap-2">
+            {items.map((x) => (
+              <span class="inline-flex items-center rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm">{x}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <h3 class="font-semibold text-xl">Outils / Environnements</h3>
+        <ul class="mt-3 space-y-3">
+          {tools.map(({ name, level }) => (
+            <li>
+              <div class="flex items-center justify-between"><span>{name}</span><span class="text-sm text-[var(--muted)]">{level.toFixed(1)}/5</span></div>
+              <div class="mt-1 h-2 rounded bg-white/10">
+                <div class="h-2 rounded bg-white/60" style={{ width: `${(level/5)*100}%` }}></div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <h3 class="font-semibold text-xl">Soft skills</h3>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {softSkills.map((s) => (
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm">{s}</span>
+          ))}
+        </div>
+        <h3 class="font-semibold text-xl mt-6">Langues</h3>
+        <ul class="mt-2 grid grid-cols-2 gap-2">
+          {langs.map((l) => (
+            <li class="flex items-center justify-between rounded-lg bg-white/5 border border-white/10 p-2">
+              <span>{l.name}</span>
+              <span class="text-sm text-[var(--muted)]">{l.level}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCES & FORMATION -->
+  <section class="asus-rog-card p-6 mb-6">
+    <h2 class="text-3xl font-bold mb-2">Expériences & formation</h2>
+
+    {/* Détails étendus */}
+    <div class="mt-6 space-y-6">
+      {timeline.map((t) => (
+        <article class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <header class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
+            <h3 class="text-xl font-semibold">{t.title}</h3>
+            <time class="text-sm text-[var(--muted)]">{t.time}</time>
+          </header>
+          <p class="mt-2 text-[var(--muted)]">{t.desc}</p>
+          {t.bullets?.length ? (
+            <ul class="mt-3 list-disc pl-5 space-y-1">
+              {t.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          ) : null}
+          {t.stack?.length ? (
+            <div class="mt-3 flex flex-wrap gap-2">
+              {t.stack.map((s) => (
+                <span class="inline-flex items-center rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs">{s}</span>
+              ))}
+            </div>
+          ) : null}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ÉDUCATION -->
+  <section class="asus-rog-card p-6 mb-6">
+    <h2 class="text-3xl font-bold">Formation</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      {education.map((e) => (
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-xl font-semibold">{e.school}</h3>
+            <span class="text-sm text-[var(--muted)]">{e.period}</span>
+          </div>
+          <p class="mt-1">{e.degree}</p>
+          {e.details?.length ? (
+            <ul class="mt-2 list-disc pl-5 space-y-1">
+              {e.details.map((d) => <li>{d}</li>)}
+            </ul>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- QUICK WINS / À METTRE EN AVANT -->
+  <section class="asus-rog-card p-6 mb-6">
+    <h2 class="text-3xl font-bold">Mises en avant techniques</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-3">
+      {quickWins.map((q) => (
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] p-4">
+          <h3 class="text-lg font-semibold">{q.title}</h3>
+          <p class="mt-1 text-[var(--muted)]">{q.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CENTRES D'INTÉRÊT -->
+  <section class="asus-rog-card p-6 mb-6">
+    <h2 class="text-3xl font-bold">Centres d’intérêt</h2>
+    <ul class="mt-3 grid gap-3 md:grid-cols-2">
+      {interests.map((i) => (
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3 flex items-center justify-between">
+          <span>{i.name}</span>
+          <span class="text-sm text-[var(--muted)]">{i.detail}</span>
+        </li>
+      ))}
     </ul>
   </section>
+
+  <!-- CV PDF + CTA -->
+  <section class="asus-rog-card p-6">
+    <h2 class="text-3xl font-bold">Télécharger mon CV</h2>
+    <p class="text-[var(--muted)] mt-1">Place ton PDF dans <code>/public/cv.pdf</code> pour activer le bouton.</p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <a class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 hover:bg-white/10 transition" href={`${base}/cv.pdf`} download>
+        <span>📄 Télécharger (PDF)</span>
+      </a>
+      <a class="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 hover:bg-emerald-500/20 transition" href="contact" aria-label="Contact rapide">
+        <span>💬 Me contacter</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Micro améliorations d’accessibilité/print -->
+  <style>
+    @media print {
+      .asus-rog-card { box-shadow: none !important; background: white !important; color: black !important; }
+      a { text-decoration: underline; color: black; }
+    }
+  </style>
 </Base>

@@ -1,6 +1,6 @@
 {
   "name": "portfolio-astro-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,17 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.0.0",
     "astro": "^5.0.0",
+    "@astrojs/react": "^4.4.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "typescript": "^5.6.3"
   }
 }

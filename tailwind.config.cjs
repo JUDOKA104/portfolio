@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          bg: "#666966",
-          accent: "#005A1E"
-        }
+        brand: { bg: "#0b0c0e", accent: "#005A1E" }
+      },
+      boxShadow: {
+        rog: "0 10px 30px rgba(0,0,0,.5)"
       }
     },
   },
