@@ -1,25 +1,65 @@
-# Portfolio Astro + React + Tailwind — v2 Custom
+# 🌑 Portfolio — Enzo Oriol
 
-- Dark theme (inspi ROG), accents `#005A1E`
-- SEO & OpenGraph intégrés (`src/components/Seo.astro`)
-- Pages: Accueil, Projets, CV (Timeline + bouton CV PDF), Contact (Formspree), 404
-- GitHub Pages ready (Actions)
+**Portfolio moderne développé avec Astro, React et Tailwind.**  
+Présente mes projets en développement, Odoo 18, full-stack et cybersécurité.
 
-## Déploiement GitHub Pages
-- Mets `site` et éventuellement `base` dans `astro.config.mjs` :
-```js
-export default defineConfig({
-  site: 'https://<user>.github.io/<repo>',
-  base: '/<repo>'
-});
+---
+
+## 🚀 Stack technique
+
+- Astro  
+- React + TypeScript  
+- Tailwind CSS  
+- Animations (parallax, halo ROG, grid subtile)  
+- Déploiement GitHub Pages
+
+---
+
+## 🧩 Structure du site
+
+- Hero  
+- À propos  
+- Projets (case studies)  
+- Timeline  
+- Contact
+
+---
+
+## 🎨 Design
+
+- Thème sombre  
+- Composants Asus-ROG  
+- Badges stylisés  
+- Layout responsive  
+- Effets visuels cohérents
+
+---
+
+## 📂 Arborescence
 ```
-- Commit & push sur `main`, Pages = GitHub Actions.
+src/
+├── components/
+├── data/
+├── layouts/
+├── pages/
+└── styles/
+```
 
-## Personnaliser
-- Couleurs: `tailwind.config.cjs`
-- Projets: `src/data/projects.json`
-- CV: place `public/cv.pdf`
-- Contact: remplace l’URL `Formspree` (ou supprime le form)
-- Meta: passe `title/description/image` via le layout `Base.astro`
+- Données projets & Timeline : `/data` 
 
-Bon build !
+---
+
+## 🎯 Objectifs
+
+- Présentation professionnelle  
+- Mise en avant des projets  
+- Centralisation des expériences  
+- Site rapide, clair et moderne
+
+---
+
+## 📩 Liens
+
+- **Portfolio :** https://judoka104.github.io/portfolio  
+- **GitHub :** https://github.com/judoka104
+

@@ -11,18 +11,14 @@ type Props = {
 
 export default function ProjectCard({ title, tags, description, highlights = [], link, repo }: Props) {
   return (
-    <article className="asus-rog-card">
+    <article className="asus-rog-card flexcol rog-hyper">
       <h3 className="text-xl font-semibold">{title}</h3>
       <p className="text-sm text-[var(--muted)] mt-1">{description}</p>
 
-      {/* tags */}
       <div className="mt-3 flex flex-wrap gap-2">
-        {tags.map((t) => (
-          <span key={t} className="badge">{t}</span>
-        ))}
+        {tags.map((t) => (<span key={t} className="badge">{t}</span>))}
       </div>
 
-      {/* highlights en bullets */}
       {highlights.length > 0 && (
         <ul className="mt-4 space-y-1.5 text-sm text-[var(--muted)]">
           {highlights.slice(0, 3).map((h, i) => (
@@ -36,11 +32,11 @@ export default function ProjectCard({ title, tags, description, highlights = [],
         </ul>
       )}
 
-      {/* actions */}
-      <div className="mt-4 flex gap-3">
-        {link && <a className="btn" href={link} target="_blank" rel="noreferrer">Voir la démo</a>}
-        {repo && <a className="btn" href={repo} target="_blank" rel="noreferrer">Voir le projet</a>}
+      <div className="card-actions mt-5 flex gap-3">
+        {link && <a className="btn-primary" href={link} target="_blank" rel="noreferrer">Voir la démo</a>}
+        {repo && <a className="btn-primary" href={repo} target="_blank" rel="noreferrer">Voir le projet</a>}
       </div>
     </article>
   );
 }
+
