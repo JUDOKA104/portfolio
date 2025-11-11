@@ -52,20 +52,6 @@
         "href": "projects"
     },
     {
-        "date": "2023 → 2024",
-        "title": "Stages dev — Python orienté API",
-        "bullets": [
-            "Dév endpoints et intégrations, gestion d’I/O, monitoring léger",
-            "Tests & documentation, packaging de scripts",
-            "Initiation CI basique (lint, checks)"
-        ],
-        "badges": [
-            "Python",
-            "API",
-            "Tests"
-        ]
-    },
-    {
         "date": "2024 → 2026",
         "title": "IPSSI — Prépa Bachelor (Lyon)",
         "bullets": [
@@ -78,6 +64,20 @@
             "PKI",
             "Reverse-proxy",
             "2FA-SSH"
+        ]
+    },
+    {
+        "date": "2023 → 2024",
+        "title": "Stages dev — Python orienté API",
+        "bullets": [
+            "Dév endpoints et intégrations, gestion d’I/O, monitoring léger",
+            "Tests & documentation, packaging de scripts",
+            "Initiation CI basique (lint, checks)"
+        ],
+        "badges": [
+            "Python",
+            "API",
+            "Tests"
         ]
     },
     {
