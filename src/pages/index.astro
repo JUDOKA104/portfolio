@@ -471,20 +471,31 @@ const items = rawItems.map((it) => ({
       <div class="grid md:grid-cols-2 gap-5 mt-6">
         <Reveal delay={0.02} client:load>
           <div class="asus-rog-card">
-            <h3 class="text-lg font-semibold">Développement & ERP</h3>
+            <h3 class="text-lg font-semibold">Développement</h3>
+
             <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
-              <li>✅ OWL 2 : composants modulaires, formulaires, modales</li>
               <li>
-                ✅ QWeb : PDF avancés, branding dynamique, tables complexes
+                ✅ Front-end : React, TypeScript, Astro, HTML/CSS/JS &
+                composants UI
               </li>
               <li>
-                ✅ Python : modèles, ACL, routes portail, multi-entreprise
+                ✅ Back-end : Python (API, scripts, logique métier), C# & C++
+              </li>
+              <li>
+                ✅ Création d’interfaces dynamiques : modales, formulaires,
+                intégration UX
+              </li>
+              <li>
+                ✅ Bases de données : PostgreSQL, SQL basique, schémas &
+                relations
               </li>
             </ul>
+
             <div class="mt-3 flex flex-wrap gap-2">
-              <span class="badge">Odoo 18</span><span class="badge">OWL 2</span>
-              <span class="badge">QWeb</span><span class="badge">Python</span
-              ><span class="badge">PostgreSQL</span>
+              <span class="badge">React/TypeScript</span>
+              <span class="badge">Astro</span>
+              <span class="badge">Python/C#/C++</span>
+              <span class="badge">SQL</span>
             </div>
           </div>
         </Reveal>
@@ -492,17 +503,33 @@ const items = rawItems.map((it) => ({
         <Reveal delay={0.06} client:load>
           <div class="asus-rog-card">
             <h3 class="text-lg font-semibold">Linux & Infrastructure</h3>
+
             <ul class="mt-2 text-sm text-[var(--muted)] space-y-1.5">
               <li>
-                ✅ Debian, Rocky, Alpine : durcissement, services, supervision
+                ✅ Debian, Rocky, Alpine : installation avancée, hardening,
+                gestion des services
               </li>
-              <li>✅ PKI : CA interne, certificats, chaîne de confiance</li>
-              <li>✅ Reverse proxy, pare-feu, segmentation réseau</li>
+              <li>
+                ✅ Sécurité : PKI (CA interne), certificats TLS, chaîne de
+                confiance, SSH + clés
+              </li>
+              <li>
+                ✅ Réseau : reverse proxy, pare-feu (firewalld), segmentation &
+                VLAN
+              </li>
+              <li>
+                ✅ Supervision & logs : Journald, auditd, suivi des ressources &
+                alertes
+              </li>
             </ul>
+
             <div class="mt-3 flex flex-wrap gap-2">
-              <span class="badge">Linux</span><span class="badge">Debian</span>
-              <span class="badge">Rocky</span><span class="badge">PKI</span
-              ><span class="badge">NGINX</span>
+              <span class="badge">Linux</span>
+              <span class="badge">PKI</span>
+              <span class="badge">NGINX</span>
+              <span class="badge">SSH</span>
+              <span class="badge">proxy</span>
+              <span class="badge">pare-feu</span>
             </div>
           </div>
         </Reveal>
