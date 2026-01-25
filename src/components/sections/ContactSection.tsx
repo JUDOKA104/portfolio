@@ -11,11 +11,11 @@ export default function ContactSection() {
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="h-[1px] w-8 bg-zinc-700"></div>
-                                <span className="text-zinc-500 text-xs uppercase tracking-[0.2em]">Candidature</span>
+                                <span className="text-zinc-500 text-xs uppercase tracking-[0.2em]">Contact</span>
                             </div>
 
                             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white font-bold uppercase tracking-tight mb-8">
-                                Prêt à rejoindre <br /> vos équipes.
+                                Je suis prêt à rejoindre <br /> vos équipes !
                             </h2>
 
                             <p className="text-zinc-400 text-base leading-relaxed max-w-md mb-12">
@@ -68,7 +68,6 @@ export default function ContactSection() {
                             className="bg-zinc-900/60 border border-white/5 rounded-3xl p-6 sm:p-8 md:p-10 backdrop-blur-sm shadow-xl"
                         >
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                                {/* FIX: Ajout de suppressHydrationWarning sur le DIV parent */}
                                 <div className="space-y-2" suppressHydrationWarning={true}>
                                     <label htmlFor="name" className="text-xs uppercase tracking-wider text-zinc-500 font-bold ml-1">Nom</label>
                                     <input
@@ -81,7 +80,6 @@ export default function ContactSection() {
                                         suppressHydrationWarning={true}
                                     />
                                 </div>
-                                {/* FIX: Ajout de suppressHydrationWarning sur le DIV parent */}
                                 <div className="space-y-2" suppressHydrationWarning={true}>
                                     <label htmlFor="email" className="text-xs uppercase tracking-wider text-zinc-500 font-bold ml-1">Email</label>
                                     <input
@@ -96,7 +94,6 @@ export default function ContactSection() {
                                 </div>
                             </div>
 
-                            {/* FIX: Ajout de suppressHydrationWarning sur le DIV parent */}
                             <div className="space-y-2 mb-6" suppressHydrationWarning={true}>
                                 <label htmlFor="subject" className="text-xs uppercase tracking-wider text-zinc-500 font-bold ml-1">Sujet</label>
                                 <select
@@ -110,7 +107,6 @@ export default function ContactSection() {
                                 </select>
                             </div>
 
-                            {/* FIX: Ajout de suppressHydrationWarning sur le DIV parent */}
                             <div className="space-y-2 mb-8" suppressHydrationWarning={true}>
                                 <label htmlFor="message" className="text-xs uppercase tracking-wider text-zinc-500 font-bold ml-1">Message</label>
                                 <textarea

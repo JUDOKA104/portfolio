@@ -36,7 +36,7 @@ export default function Footer() {
                         <a href="https://github.com/judoka104" target="_blank" aria-label="Mon profil GitHub" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:bg-white hover:text-black transition-all">
                             <Github size={18} />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" aria-label="Mon profil LinkedIn" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:bg-[#0077b5] hover:text-white transition-all">
+                        <a href="https://www.linkedin.com/in/enzo-oriol-81448832b" target="_blank" aria-label="Mon profil LinkedIn" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:bg-[#0077b5] hover:text-white transition-all">
                             <Linkedin size={18} />
                         </a>
                         <a href="mailto:oriol.enzo10@gmail.com" aria-label="Me contacter par mail" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:bg-emerald-500 hover:text-white transition-all">

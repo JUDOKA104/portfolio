@@ -4,7 +4,7 @@ import { useInView } from "../../hooks/useInView";
 
 // --- DONNÉES ---
 const projects = [
-    // 1. ODOO (Top Tier)
+    // 1. ODOO
     {
         id: "odoo",
         title: "Expertise Odoo 18",
@@ -16,7 +16,7 @@ const projects = [
         icon: Database,
         private: true
     },
-    // 2. VISION SOLVER (N°2)
+    // 2. VISION SOLVER
     {
         id: "solver",
         title: "Vision Solver Bot",
@@ -28,7 +28,7 @@ const projects = [
         icon: Cpu,
         private: true
     },
-    // 3. CONFIGURATEUR AVG (N°3)
+    // 3. CONFIGURATEUR AVG
     {
         id: "config-avg",
         title: "Configurateur AVG",
@@ -90,10 +90,10 @@ export default function ProjetsSection() {
             <div ref={ref} className={`mb-16 ${anim('delay-0')}`}>
                 <div className="flex items-center gap-4 mb-4">
                     <div className="h-[1px] w-12 bg-zinc-700"></div>
-                    <span className="text-zinc-500 text-xs uppercase tracking-[0.2em]">Portfolio</span>
+                    <span className="text-zinc-500 text-xs uppercase tracking-[0.2em]">Mes Réalisations</span>
                 </div>
                 <h2 className="font-display text-4xl md:text-6xl font-bold uppercase tracking-tight text-white">
-                    Projets <span className="text-zinc-700">Sélectionnés</span>
+                    Projets
                 </h2>
             </div>
 
