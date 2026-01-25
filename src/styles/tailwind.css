@@ -2,314 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Thème */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Switzer:wght@300;400;500;600&display=swap');
+
 :root {
-  --bg: #0b0c0e;
-  /* fond général */
-  --fg: #e6e8ea;
-  /* texte */
-  --muted: #9aa3ad;
-  /* texte secondaire */
-  --accent: #14b86e;
-  /* vert + punchy */
-  --accent-2: #7cfcc6;
-  /* accent secondaire (dégradés) */
-  --card: #0f1115;
-  /* fond cartes */
-  --border: #21242c;
-  /* bordures */
+  --background: #050505;
+  --foreground: #ededed;
+  --muted: #A1A1AA;
+  --border: #27272A;
+  --input-bg: #18181B;
+
+  --primary: #C084FC;
+  --secondary: #34D399;
 }
 
-/* Base */
-html,
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
 body {
-  background: var(--bg);
-  color: var(--fg)
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Switzer', sans-serif;
+  overflow-x: hidden;
 }
 
-* {
-  outline: 0
-}
-
-:focus-visible {
-  @apply ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-transparent rounded-md;
-}
-
-/* Texture bruit très légère */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .06;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB...");
-  background-size: 8px 8px;
-}
-
-/* Cartes */
-.asus-rog-card {
-  @apply rounded-2xl p-6 shadow-xl border backdrop-blur;
-  background: linear-gradient(180deg, rgba(31, 34, 41, .65), rgba(20, 23, 29, .6));
-  border-color: var(--border);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-}
-
-.asus-rog-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
-  border-color: color-mix(in oklch, var(--accent) 45%, #1f2329);
-}
-
-/* Liens */
-a {
-  @apply underline decoration-transparent hover:decoration-current transition
-}
-
-/* Titres */
-.h-title {
-  @apply text-4xl md:text-5xl font-extrabold tracking-tight
-}
-
-.h-sub {
-  @apply text-lg text-[var(--muted)]
-}
-
-/* Séparateur fin */
-.hr {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #2b2f38, transparent)
-}
-
-/* Badge stack (fusion + micro-survol + gradient + inset border) */
-.badge {
-  @apply text-[11px] px-2.5 py-1 rounded-full border;
-  border-color: var(--border);
-  color: var(--muted);
-  background: linear-gradient(180deg, rgba(40, 44, 52, .55), rgba(25, 28, 34, .55));
-  transition: transform .15s ease, border-color .2s ease, background .2s ease;
-  box-shadow: inset 0 0 0 1px var(--border);
-}
-
-.badge:hover {
-  transform: translateY(-1px);
-  border-color: color-mix(in oklch, var(--accent) 45%, var(--border));
-}
-
-/* Boutons fantômes */
-.btn {
-  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl border;
-  border-color: var(--border)
-}
-
-.btn:hover {
-  border-color: color-mix(in oklch, var(--accent) 50%, var(--border))
-}
-
-/* Boutons primaires + magnétisme */
-.btn-primary {
-  @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl border;
-  border-color: color-mix(in oklch, var(--accent) 45%, var(--border));
-  background: linear-gradient(180deg, rgba(20, 200, 120, .15), rgba(20, 200, 120, .05));
-  box-shadow: 0 8px 30px rgba(20, 200, 120, .12);
-  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 36px rgba(20, 200, 120, .18)
-}
-
-.magnet {
-  perspective: 800px
-}
-
-.magnet>.btn-primary {
-  will-change: transform;
-  transform-style: preserve-3d
-}
-
-/* Scrollbar top (progress) */
-#scrollbar {
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2))
-}
-
-article {
-  margin-bottom: 20px
-}
-
-/* Grille projets — hauteur/align auto pour CTA */
-#projectsGrid {
-  align-items: stretch
-}
-
-#projectsGrid .project-wrap {
-  height: 100%
-}
-
-#projectsGrid .project-wrap>* {
-  height: 100%
-}
-
-#projectsGrid .project-wrap>* a,
-#projectsGrid .project-wrap>* button {
-  margin-top: auto;
-  align-self: flex-start
-}
-
-/* Hauteur mini pour l'équilibre visuel */
-@media (min-width:768px) {
-  #projectsGrid .project-wrap>* {
-    min-height: 300px
+@layer utilities {
+  .font-syncopate {
+    font-family: 'Syncopate', sans-serif;
   }
-}
 
-/* dégradé texte pour titres hero */
-.gradient-text {
-  background: linear-gradient(92deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 0 18px color-mix(in oklch, var(--accent) 25%, transparent));
-}
-
-/* carte “hyper” : halo + bord animé */
-.rog-hyper {
-  position: relative;
-  isolation: isolate
-}
-
-.rog-hyper::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  border-radius: calc(1rem + 2px);
-  background: conic-gradient(from var(--a, 0turn), color-mix(in oklch, var(--accent) 55%, transparent), transparent 50%) border-box;
-  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0) border-box;
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: spin 8s linear infinite;
-  opacity: .6;
-}
-
-@keyframes spin {
-  to {
-    --a: 1turn
+  .font-switzer {
+    font-family: 'Switzer', sans-serif;
   }
-}
 
-/* grille “ROG” subtile (Hero) */
-.rog-grid {
-  background:
-    radial-gradient(1200px 600px at 70% -10%, color-mix(in oklch, var(--accent) 8%, transparent), transparent 60%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, .04) 0 1px, transparent 1px 80px),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, .03) 0 1px, transparent 1px 80px);
-}
+  .animate-blob {
+    animation: blob 10s infinite;
+  }
 
-/* carte = flex col + équilibrage vertical */
-.asus-rog-card.flexcol {
-  display: flex;
-  flex-direction: column
-}
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
 
-.asus-rog-card .card-actions {
-  margin-top: auto
-}
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 
-/* image bannière dans ProjectCard */
-.card-banner {
-  aspect-ratio: 16/9;
-  border-radius: .9rem;
-  overflow: hidden;
-  border: 1px solid var(--border)
-}
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
 
-.card-banner>img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover
-}
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
 
-/* légère parallax sur le hero */
-.parallax {
-  transform: translateZ(0);
-  will-change: transform
-}
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
 
-/* bande plein écran qui traverse le container */
-.full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-
-/* espacement vertical cohérent entre sections */
-.slice {
-  padding-top: 3rem;
-  padding-bottom: 3rem
-}
-
-/* sous-nav sticky */
-.section-nav {
-  position: sticky;
-  top: 56px;
-  z-index: 30;
-  backdrop-filter: blur(8px);
-  background: color-mix(in oklch, var(--bg) 78%, transparent);
-  border-bottom: 1px solid color-mix(in oklch, var(--border) 80%, transparent);
-}
-
-.section-nav a {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .6rem .9rem;
-  border-radius: .75rem;
-  border: 1px solid transparent;
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.section-nav a:hover {
-  border-color: var(--border);
-  color: var(--fg)
-}
-
-.section-nav a[aria-current="true"] {
-  border-color: color-mix(in oklch, var(--accent) 50%, var(--border));
-  background: linear-gradient(180deg, rgba(20, 200, 120, .12), rgba(20, 200, 120, .04));
-  color: var(--fg);
-}
-
-/* petits KPI propres */
-.kpi {
-  display: grid;
-  gap: .25rem;
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: .9rem;
-  background: linear-gradient(180deg, rgba(40, 44, 52, .35), rgba(25, 28, 34, .35));
-}
-
-.kpi .num {
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 1
-}
-
-.kpi .lab {
-  font-size: .8rem;
-  color: var(--muted)
-}
-
-/* titres de section */
-.section-title {
-  @apply text-3xl font-bold text-center
-}
-
-.section-sub {
-  @apply text-sm text-[var(--muted)] text-center max-w-2xl mx-auto
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
 }
